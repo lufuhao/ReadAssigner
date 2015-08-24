@@ -1,0 +1,49 @@
+SYNOPSIS:
+
+perl $0 --input my.fa [Options]
+Version: LUFUHAO20150223
+
+Requirements:
+	Programs:
+	Modiles: Scalar::Util, Cwd, Getopt::Long, FindBin
+
+Descriptions:
+	Determine the insert size given pairs of seqing data by
+	mapping them to a reference.
+
+Options:
+	--help|-h
+		Print this help/usage;
+	--fasta	<Fasta>
+		[Msg] Reference sequences in fasta
+	--bam	<Bam>
+		[Msg] Sorted Bam files
+	--vcf	<VCF>
+		[Msg] VCF file (Freebayes)
+	--output|-o	<Include>
+		[Opt] Output for included read ID, 
+		Default: Bam_basename.include
+	--exclude|-e	<Exclude>
+		[Opt] Output for excluded Read ID,
+		Default: Bam_basename.exclude
+	--notsure|-n
+		[Opt] Output for not sure (included and excluded) read ID
+		Default: Bam_basename.notsure
+	--minmapq|-q	<Int>
+		[Opt] Minimum mapping quality
+	--debug
+		[Opt] Output detailed info for debugging
+	--verbose
+		Detailed output for trouble-shooting;
+	--version|v!
+		Print current SCRIPT version;
+
+Example:
+	perl $0 --fasta ref.fa --bam my.bam --vcf my.vcf -q 2
+
+Author:
+	Fu-Hao Lu
+	Post-Doctoral Scientist in Micheal Bevan laboratory
+	Cell and Developmental Department, John Innes Centre
+	Norwich NR4 7UH, United Kingdom
+	E-mail: Fu-Hao.Lu\@jic.ac.uk
